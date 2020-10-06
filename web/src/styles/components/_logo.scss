@@ -1,0 +1,15 @@
+/**
+ * components/_logo.scss
+ */
+
+.logo {
+
+  img {
+    max-width: 120px;
+    height: auto;
+
+    @media screen and (min-width: $screen-lg-min-width) {
+      max-width: 392px;
+    }
+  }
+}

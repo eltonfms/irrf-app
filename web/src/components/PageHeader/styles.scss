@@ -1,0 +1,24 @@
+.irrfmeasurement-list {
+
+  &__top {
+    background-color: var(--color-secondary-dark);
+    background: linear-gradient(45deg, rgba(66,87,102,1) 0%,rgba(41,53,63,1) 100%);
+  }
+
+  &__info {
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    @media screen and (min-width: 1124px) {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 50px;
+    }
+
+    p {
+      font-size: .85rem;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+  }
+}

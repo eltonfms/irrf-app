@@ -1,0 +1,127 @@
+.landing {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(58,132,178,1) 0%,rgba(10,64,109,1) 100%);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 5% 0;
+}
+
+.landing .wrapper {
+
+  @media screen and (min-width: 1124px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+  }
+}
+
+.landing-logo {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  @media screen and (min-width: 1124px) {
+    grid-column: 1 / span 6;
+  }
+
+  img {
+    background: radial-gradient(ellipse at center, rgba(33, 129, 191, 0.8) 0%, rgba(48, 115, 159, 0) 70%);
+  }
+}
+
+.landing-title {
+  color: var(--color-light);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  line-height: 1.4;
+  margin-top: 1%;
+  text-align: center;
+
+  @media screen and (min-width: 1124px) {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin-top: 3%;
+    max-width: 500px;
+  }
+}
+
+.landing-actions {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin: 30px 0;
+
+  @media screen and (min-width: 1124px) {
+    grid-column: 7 / span 6;
+  }
+
+  a {
+    align-items: center;
+    border: 2px solid rgba(255,255,255,.15);
+    border-radius: 5px;
+    box-shadow: inset 2px 5px 10px 0px rgba(0, 0, 0, 0.15);
+    color: var(--color-light);
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 600;
+    justify-content: center;
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 17px 5px;
+    position: relative;
+    text-decoration: none;
+    transform: none;
+    transition: all .3s ease;
+    width: 100%;
+
+    @media screen and (min-width: 1124px) {
+      font-size: 1.1rem;
+      justify-content: flex-start;
+      padding: 17px 20px 17px 30px;
+      width: 75%;
+    }
+
+    &:hover {
+      background-color: var(--color-primary-light);
+      box-shadow: 5px 10px 10px 0px rgba(0,0,0,.2);
+      transform: translate3d(-2px, -2px, 0);
+    }
+
+    img {
+      margin-right: 10px;
+      width: 30px;
+    }
+  }
+
+  &--tables {
+    background-color: #0066b3;
+  }
+
+  &--register {
+    background-color: #005696;
+  }
+}
+
+.landing-footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+
+  @media screen and (min-width: 1124px) {
+    grid-column: 4 / span 5;
+    margin-top: 16%;
+  }
+
+  p {
+    color: rgba(#ffffff, .5);
+    display: flex;
+    font-size: .8rem;
+    font-weight: normal;
+    letter-spacing: .04em;
+  }
+}

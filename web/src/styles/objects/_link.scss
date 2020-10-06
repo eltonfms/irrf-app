@@ -1,0 +1,31 @@
+/**
+ * objects/_link.scss
+ */
+
+.link {
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: .04em;
+  line-height: 1.05;
+  padding: 10px;
+  text-decoration-line: underline;
+  text-underline-position: under;
+  transition: all .45s ease;
+  user-select: none;
+  vertical-align: top;
+  -webkit-tap-highlight-color: transparent;
+
+  @media screen and (min-width: var(--screen-lg-min-width)) {
+    font-size: 16px;
+  }
+
+  &:active {
+    outline: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

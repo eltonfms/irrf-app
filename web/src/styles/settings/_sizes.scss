@@ -1,0 +1,22 @@
+/**
+ * settings/_sizes.scss
+ */
+
+$screen-sm-max-width: 1123px;
+$screen-lg-min-width: 1124px;
+$font-size: 13px;
+$font-size-lg: 16px;
+
+:root {
+  --screen-sm-max-width: #{$screen-sm-max-width};
+  --screen-lg-min-width: #{$screen-lg-min-width};
+  --font-size: #{$font-size};
+  --font-size-lg: #{$font-size-lg};
+
+  font-size: var(--font-size);
+  @apply text-sm;
+
+  @media screen and (min-width: $screen-lg-min-width) {
+    font-size: var(--font-size-lg);
+  }
+}
