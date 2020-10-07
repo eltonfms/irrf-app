@@ -7,6 +7,10 @@ interface IRRFMeasurementItemProps {
   photo: string;
 }
 
+/*const discount = () => {
+  return 200;
+}*/
+
 const IRRFMeasurementItem: React.FC<IRRFMeasurementItemProps> = (props) => {
   return (
     <article className="irrfmeasurement-item">
@@ -39,7 +43,7 @@ const IRRFMeasurementItem: React.FC<IRRFMeasurementItemProps> = (props) => {
         <div className="irrfmeasurement-item__value">
           <p>
             Desconto IRRF<br />
-            <strong><span>R$ 426,83333</span></strong>
+            <strong><span>R$ 3232,09</span></strong>
           </p>
         </div>
       </main>
