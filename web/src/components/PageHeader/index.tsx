@@ -29,11 +29,13 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
           </header>
         </div>
       </div>
-      <div className="irrfmeasurement-list__info">
-        <div className="wrapper">
-          {props.children}
+      {props.children &&
+        <div className="irrfmeasurement-list__info">
+          <div className="wrapper">
+            {props.children}
+          </div>
         </div>
-      </div>
+      }
     </div>
   )
 }

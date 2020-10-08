@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import PageHeader from '../../components/PageHeader';
-import IRRFMeasurementItem from '../../components/IRRFMeasurementItem';
+import IRRFMeasurementItem, { Employee } from '../../components/IRRFMeasurementItem';
+
+import api from '../../services/api';
 
 import tempPhoto1 from '../../images/temp/photo-leticia-aurora-farias.jpg';
 import tempPhoto2 from '../../images/temp/photo-edson-thiago-drumond.jpg';
@@ -9,6 +12,16 @@ import tempPhoto3 from '../../images/temp/photo-sandra-gioavanna-drumond.jpg';
 import './styles.scss';
 
 function IRRFMeasurement() {
+  const [employees, setEmployees] = useState([]);
+
+  async function listEmployees() {
+    const response = await api.get('employees');
+
+    setEmployees(response.data);
+  }
+
+  listEmployees();
+
   return (
     <div className="irrfmeasurement-list">
       <PageHeader title="Tabelas e cálculos do IRRF">
@@ -21,21 +34,12 @@ function IRRFMeasurement() {
       </PageHeader>
       <main className="irrfmeasurement-list__main">
         <div className="wrapper">
-          <IRRFMeasurementItem
+          {/*<IRRFMeasurementItem
             name="Letícia Aurora Farias"
-            photo={tempPhoto1} />
-          <IRRFMeasurementItem
-            name="Edson Thiago Drumond"
-            photo={tempPhoto2} />
-          <IRRFMeasurementItem
-            name="Fátima Elza Tereza Castro"
-            photo="" />
-          <IRRFMeasurementItem
-            name="Sandra Giovanna Drumond"
-            photo={tempPhoto3} />
-          <IRRFMeasurementItem
-            name="Valentina Clara Nunes"
-            photo="" />
+          photo={tempPhoto1} /> */}
+          {employees.map((employee: Employee) => {
+            return <IRRFMeasurementItem employee={employee} key={employee.id} />;
+          })}
         </div>
       </main>
     </div>

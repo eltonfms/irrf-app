@@ -6,16 +6,16 @@
   align-items: center;
   background-color: var(--color-secondary);
   border: 0;
-  border-radius: 20px;
-  color: var(--color-primary);
+  border-radius: 5px;
+  color: var(--color-light);
   display: inline-flex;
   flex-shrink: 0;
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
   justify-content: center;
   line-height: 1em;
   max-width: 100%;
-  min-height: 35px;
+  min-height: 42px;
   min-width: 125px;
   padding-left: 20px;
   padding-right: 20px;
@@ -24,11 +24,18 @@
   user-select: none;
 
   @media screen and (min-width: var(--screen-lg-min-width)) {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   &:hover {
-    background: var(--color-primary);
-    color: var(--color-secondary-dark);
+    background-color: var(--color-primary);
+  }
+
+  &--save {
+    background-color: var(--color-success-600);
+
+    &:hover {
+      background-color: var(--color-success-500);
+    }
   }
 }

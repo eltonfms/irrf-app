@@ -4,6 +4,12 @@ import db from '../database/connection';
 
 export default class EmployeesControler {
   async index(request: Request, response: Response) {
+    const employees = await db('employees')
+
+    return response.json(employees);
+  }
+
+  async indexFilter(request: Request, response: Response) {
     const filters = request.query;
     const name = filters.name as string;
 
@@ -14,7 +20,7 @@ export default class EmployeesControler {
     }
 
     const employees = await db('employees')
-      //.where('employees.name', '=', name)
+      .where('employees.name', '=', name)
 
     return response.json(employees);
   }

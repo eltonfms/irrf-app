@@ -1,0 +1,2 @@
+[1007/233212.246:ERROR:registration_protocol_win.cc(64)] BuildSecurityDescriptor: O nome do provedor de rede especificado é inválido. (0x4B4)
+[1007/233213.385:ERROR:registration_protocol_win.cc(131)] TransactNamedPipe: O pipe foi finalizado. (0x6D)

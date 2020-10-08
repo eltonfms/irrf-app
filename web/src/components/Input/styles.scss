@@ -1,0 +1,29 @@
+.employee-field {
+
+  & + & {
+    margin-top: 1.2rem;
+  }
+}
+
+.employee-label {
+  color: var(--color-gray-600);
+  font-size: .85rem;
+  font-weight: 500;
+}
+
+.employee-entry {
+  background-color: var(--color-light);
+  border: 1px solid rgba(0,0,0,.15);
+  box-shadow: 5px 7px 5px -5px rgba(0,0,0,.1);
+  border-radius: 5px;
+  font-size: .87rem;
+  height: 42px;
+  margin-top: 5px;
+  outline: none;
+  padding: 0 10px;
+  width: 100%;
+
+  @media screen and (min-width: 1124px) {
+    padding: 0 20px;
+  }
+}
