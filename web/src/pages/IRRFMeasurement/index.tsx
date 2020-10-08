@@ -7,10 +7,6 @@ import IRRFMeasurementItem, { Employee } from '../../components/IRRFMeasurementI
 import api from '../../services/api';
 import calculateIRRFDiscount from '../../utils/calculateIRRFDiscount';
 
-import tempPhoto1 from '../../images/temp/photo-leticia-aurora-farias.jpg';
-import tempPhoto2 from '../../images/temp/photo-edson-thiago-drumond.jpg';
-import tempPhoto3 from '../../images/temp/photo-sandra-gioavanna-drumond.jpg';
-
 import './styles.scss';
 
 function IRRFMeasurement() {
