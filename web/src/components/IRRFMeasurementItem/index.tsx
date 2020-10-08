@@ -8,19 +8,16 @@ export interface Employee {
   avatar: string,
   cpf: string,
   salary: number,
-  social_security_discount: Number,
-  number_dependents: Number
+  social_security_discount: number,
+  number_dependents: number
 }
 
 interface IRRFMeasurementItemProps {
-  employee: Employee
+  employee: Employee,
+  irrf_discount: number
 }
 
-/*const discount = () => {
-  return 200;
-}*/
-
-const IRRFMeasurementItem: React.FC<IRRFMeasurementItemProps> = ({ employee }) => {
+const IRRFMeasurementItem: React.FC<IRRFMeasurementItemProps> = ({ employee, irrf_discount }) => {
   return (
     <article className="irrfmeasurement-item">
       <header className="irrfmeasurement-item__header">
@@ -52,7 +49,7 @@ const IRRFMeasurementItem: React.FC<IRRFMeasurementItemProps> = ({ employee }) =
         <div className="irrfmeasurement-item__value">
           <p>
             Desconto IRRF<br />
-            <strong><span>R$ 0,00</span></strong>
+            <strong><span>R$ {(irrf_discount).toFixed(2)}</span></strong>
           </p>
         </div>
       </main>

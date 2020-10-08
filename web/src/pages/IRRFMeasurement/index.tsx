@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+//import { useDispatch } from 'react-redux';
 
 import PageHeader from '../../components/PageHeader';
 import IRRFMeasurementItem, { Employee } from '../../components/IRRFMeasurementItem';
 
 import api from '../../services/api';
+import calculateIRRFDiscount from '../../utils/calculateIRRFDiscount';
 
 import tempPhoto1 from '../../images/temp/photo-leticia-aurora-farias.jpg';
 import tempPhoto2 from '../../images/temp/photo-edson-thiago-drumond.jpg';
@@ -14,13 +16,14 @@ import './styles.scss';
 function IRRFMeasurement() {
   const [employees, setEmployees] = useState([]);
 
-  async function listEmployees() {
+  const listEmployees = async () => {
     const response = await api.get('employees');
-
     setEmployees(response.data);
   }
 
-  listEmployees();
+  useEffect(() => {
+    listEmployees();
+  },[]);
 
   return (
     <div className="irrfmeasurement-list">
@@ -34,12 +37,29 @@ function IRRFMeasurement() {
       </PageHeader>
       <main className="irrfmeasurement-list__main">
         <div className="wrapper">
-          {/*<IRRFMeasurementItem
-            name="Letícia Aurora Farias"
-          photo={tempPhoto1} /> */}
-          {employees.map((employee: Employee) => {
-            return <IRRFMeasurementItem employee={employee} key={employee.id} />;
-          })}
+          {/* employees
+            .sort(({ id: previousID }, { id: currentID }) => previousID - currentID)
+            .map((employee: Employee) => {
+              return <IRRFMeasurementItem employee={employee} key={employee.id} />;
+            })
+          */}
+          { employees
+            .map((employee: Employee) => {
+              const irrfDiscount: number = Number(calculateIRRFDiscount(
+                employee.salary,
+                employee.social_security_discount,
+                employee.number_dependents
+              ));
+
+              return (
+                <IRRFMeasurementItem
+                  employee={employee}
+                  irrf_discount={irrfDiscount}
+                  key={employee.id}
+                />
+              );
+            })
+          }
         </div>
       </main>
     </div>
